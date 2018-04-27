@@ -1,9 +1,52 @@
+from random import randint
 combatant_list = []
 
 class Combatant:
     def __init__(self, name, health):
         self.name = name
         self.health = health
+
+class Torvinn:
+    def __init__(self):
+        self.health = 40
+        self.armor = 3
+        self.foe = input("Enter the name of your opponent: ")
+        if self.foe.lower() == "baron ashbury":
+            self.opponent = "Baron Ashbury"
+            self.foe = "Baron Ashbury"
+            self.boss = True
+
+    def turn(self):
+        self.has_acted = False
+        self.avengers_cooldown -= 1
+        while has_acted == False:
+            action = input("Select an ability to perform: ")
+            if action.lower() == "crusader strike":
+                self.player.crusader_strike()
+                self.has_acted = True
+            elif action.lower() == "avengers shield":
+                if avengers_cooldown <= 0:
+                    self.player.avengers_shield()
+                    self.has_acted = True
+                else:
+                    print("That ability is on cooldown.")
+            elif action.lower() == "shield of the righteous":
+                self.player.shield_of_the_righteous()
+            elif action.lower() == "consecration":
+                self.player.consecration()
+            elif action.lower() == "flash of light":
+                self.player.flash_of_light()
+                
+    def crusader_strike(self):
+        damage = 5 - self.opponent.armor + RandInt(1, 4)
+        self.BaronAshbury.boss_health -= damage
+        print("Your Crusader Strike hit " + self.foe + " " + damage + " Physical.")
+
+    def avengers_shield(self):
+        damage = 6 + RandInt(1, 3)
+        self.BaronAshbury.boss_health -= damage
+        print("Your Avenger's Shield hit " + self.foe + " " + damage + " Holy.")
+        self.avengers_cooldown = 3
 
 class Combat:
     def __init__(self):
@@ -53,4 +96,4 @@ combatant_list.append(Torvinn)
 Aarghh = Combatant("Aarghh", 25)
 combatant_list.append(Aarghh)
 
-Combat()
+#Combat()
