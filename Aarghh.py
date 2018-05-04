@@ -4,7 +4,9 @@ from random import randint
 
 
 class TargetDummy:
+    "Practice against a target dummy."
     def __init__(self):
+        "Sets starting values and introduces variables."
         self.boss_health = 10000000
         self.is_running = True
         self.turn_counter = 0
@@ -23,11 +25,13 @@ class TargetDummy:
         self.battle()
 
     def battle(self):
+        "Creates the round cycle."
         while self.is_running is True:
             self.turn_counter += 1
             self.player_turn()
 
     def player_turn(self):
+        "Allows the player to act."
         has_acted = False
         self.start_of_player_turn()
         while has_acted is False:
@@ -72,6 +76,7 @@ class TargetDummy:
                 print("Not a valid command.")
 
     def drain_soul(self):
+        "Damaging and healing effect of Drain Soul."
         amount = 4 + randint(1, 2)
         self.boss_health -= amount
         self.player_health += amount
@@ -81,6 +86,7 @@ class TargetDummy:
         print("Your Drain Soul healed you " + str(amount) + " Shadow.")
 
     def agony(self):
+        "Damaging effect of Agony."
         amount = 2 + self.agony_count + randint(1, 2)
         self.boss_health -= amount
         print("Your Agony hit Boss " + str(amount) + " Shadow.")
@@ -89,16 +95,19 @@ class TargetDummy:
         print(self.agony_count)
         self.agonized -= 1
         shard_gen = randint(1, 4)
+        "Generates Soul Shards."
         if shard_gen == 1 and self.soul_shards < 6:
             self.soul_shards += 1
 
     def corruption(self):
+        "Damaging effect of Corruption."
         amount = 2 + randint(1, 2)
         self.boss_health -= amount
         print("Your Corruption hit Boss " + str(amount) + " Shadow.")
         self.corrupted -= 1
 
     def healthstone(self):
+        "Healthstone activation."
         amount = 12 + randint(1, 3)
         self.player_health += amount
         if self.player_health > 25:
@@ -107,6 +116,7 @@ class TargetDummy:
         self.healthstones -= 1
 
     def life_tap(self):
+        "Activates Life Tap."
         self.player_mana += 8
         if self.player_mana > 20:
             self.player_mana = 20
@@ -114,11 +124,13 @@ class TargetDummy:
         print("Your Life Tap hit you 2 Shadow.")
 
     def unstable_affliction(self):
+        "Causes Unstable Affliction to deal damage."
         amount = 7 + randint(1, 2)
         self.boss_health -= amount
         print("Your Unstable Affliction hit Boss " + str(amount) + " Shadow.")
 
     def start_of_player_turn(self):
+        "Manages effect durations."
         if self.corrupted > 0:
             self.corruption()
         if self.agonized > 0:
@@ -140,7 +152,9 @@ class TargetDummy:
 
 
 class BaronAshbury:
+    "Fight against Baron Ashbury."
     def __init__(self):
+        "Sets starting values and variables."
         self.boss_health = 200
         self.is_running = True
         self.turn_counter = 0
@@ -162,6 +176,7 @@ class BaronAshbury:
         self.battle()
 
     def battle(self):
+        "Sets the structure of the encounter."
         while self.is_running is True:
             print("Baron Ashbury has " + str(self.boss_health) + " HP remaining.")
             self.turn_counter += 1
@@ -176,6 +191,7 @@ class BaronAshbury:
                 self.is_running = False
 
     def player_turn(self):
+        "Allows the player to act."
         has_acted = False
         self.start_of_player_turn()
         while has_acted is False and self.is_running is True:
@@ -220,6 +236,7 @@ class BaronAshbury:
                 print("Not a valid command.")
 
     def drain_soul(self):
+        "Drain Soul damaging/healing effect."
         amount = 4 + randint(1, 2)
         self.boss_health -= amount
         self.player_health += amount
@@ -229,6 +246,7 @@ class BaronAshbury:
         print("Your Drain Soul healed you " + str(amount) + " Shadow.")
 
     def agony(self):
+        "Agony damaging effect."
         amount = 2 + self.agony_count + randint(1, 2)
         self.boss_health -= amount
         print("Your Agony hit Boss " + str(amount) + " Shadow.")
@@ -236,16 +254,19 @@ class BaronAshbury:
             self.agony_count += 1
         self.agonized -= 1
         shard_gen = randint(1, 4)
+        "Generates Soul Shards."
         if shard_gen == 1 and self.soul_shards < 6:
             self.soul_shards += 1
 
     def corruption(self):
+        "Corruption damaging effect."
         amount = 2 + randint(1, 2)
         self.boss_health -= amount
         print("Your Corruption hit Boss " + str(amount) + " Shadow.")
         self.corrupted -= 1
 
     def healthstone(self):
+        "Activates Healthstone."
         amount = 12 + randint(1, 3)
         self.player_health += amount
         if self.player_health > 25:
@@ -254,6 +275,7 @@ class BaronAshbury:
         self.healthstones -= 1
 
     def life_tap(self):
+        "Activates Life Tap."
         self.player_mana += 8
         self.player_health -= 2
         if self.player_mana > 20:
@@ -261,6 +283,7 @@ class BaronAshbury:
         print("Your Life Tap hit you 2 Shadow.")
 
     def start_of_player_turn(self):
+        "Manages durations."
         if self.corrupted > 0:
             self.corruption()
         if self.agonized > 0:
@@ -285,6 +308,7 @@ class BaronAshbury:
             print("You have " + str(self.soul_shards) + " soul shards.")
 
     def boss_turn(self):
+        "The boss acts."
         self.boss_cooldown -= 1
         if self.boss_cooldown == 0:
             self.asphyxiate()
@@ -294,6 +318,7 @@ class BaronAshbury:
             self.boss_melee()
 
     def asphyxiate(self):
+        "Ashyxiation activates."
         print("Baron Ashbury says: This is just too easy.")
         print("Baron Ashbury asphyxiates his foes!")
         self.player_health = 1
@@ -302,6 +327,7 @@ class BaronAshbury:
         self.soe = True
 
     def stay_of_execution(self):
+        "Stay of Execution activates."
         print("Baron Ashbury says: I'll keep you alive to witness your screams.")
         print("Baron Ashbury delays your execution!")
         self.player_health += self.soe_amount
@@ -310,6 +336,7 @@ class BaronAshbury:
         self.soe = False
 
     def boss_melee(self):
+        "The boss' melee attack."
         damage = 8 - self.player_armor + randint(1, 4)
         self.player_health -= damage
         print("Baron Ashbury Melee hit you " + str(damage) + " Physical.")
