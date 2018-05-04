@@ -4,6 +4,7 @@ A Pokemon-like game with characters inspired by World of Warcraft.
 
 Baron Ashbury, Torvinn, Aarghh, and all abilities associated with all characters are owned by Blizzard Entertainment.
 
+
 File Structure:
 The game is played through character files, which represent certain heroes.
 
@@ -19,6 +20,7 @@ Files ending with the word "Base" contain the base code for a hero or boss.
 
 These cannot be used to play the game.
 
+
 Playing the Game:
 
 Run one of the character files.  Enter the name of the class indicating the boss you wish to face, followed by ()
@@ -29,6 +31,7 @@ Entering an incorrect command, or the command for an ability you cannot use, wil
 Deplete the boss's health before they deplete yours!
 
 Enter "quit" to prematurely end an encounter.
+
 
 Torvinn the Paladin:
 
@@ -44,20 +47,14 @@ Shield of the Righteous: Infuses your shield with holy power, striking the enemy
 
 Flash of Light: Channels holy light, healing yourself for massive damage at the start of your next turn.  Costs 5 mana. You regenerate 1 mana per round.
 
+
 Aarghh the Warlock:
-
 A dark spellcaster who corrupts his enemies' souls and steals their very life.
-
 Corruption: Corrupts the enemy, dealing light damage every round for 5 rounds. 
-
 Agony: Inflicts agony on the enemy, dealing light damage every round for 6 rounds. Damage increases each time it deals damage, up to 4 additional damage.  Bonus is lost if the effect expires.  Damage has a chance to generate a soul shard.  
-
 Unstable Affliction: Curses the enemy, dealing medium damage every round for 2 rounds.  Up to 5 instances can be active at once.  Costs 1 soul shard.
-
 Drain Soul: Drains the target's life essense, dealing low damage to the enemy and high healing to you now and at the start of your next turn.  Costs 4 mana.  You regenerate 1 mana per round.
-
 Life Tap: Sacrifices 2 of your hit points to restore 8 mana.
-
 Healthstone: Consumes a Healthstone, healing you for a massive amount.  Usable once per encounter.
 
 Training Dummy: TargetDummy()
