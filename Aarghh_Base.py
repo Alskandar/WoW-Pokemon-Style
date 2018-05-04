@@ -1,3 +1,4 @@
+        # Add these to setup
         self.player_health = 25
         self.player_armor = 1
         self.player_mana = 20

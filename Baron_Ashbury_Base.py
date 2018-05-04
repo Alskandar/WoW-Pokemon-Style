@@ -42,6 +42,7 @@ class BaronAshbury:
         print("Baron Ashbury asphyxiates his foes!")
         self.player_health = 1
         self.boss_cooldown = randint(4, 6)
+        self.channel = False
         self.soe = True
 
     def stay_of_execution(self):

@@ -5,9 +5,9 @@ class TargetDummy:
     def __init__(self):
         self.boss_health = 10000000
         self.is_running = True
-        self.turn_counter = 0
         self.boss_armor = 0
-        self.battle
+        # Player info goes here
+        self.battle()
 
     def battle(self):
         while self.is_running is True:
