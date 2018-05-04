@@ -2,7 +2,9 @@ from random import randint
 
 
 class BaronAshbury:
+    "Fight against Baron Ashbury."
     def __init__(self):
+        "Sets starting values and introduces variables for both hero and boss."
         self.boss_health = 200
         self.is_running = True
         self.turn_counter = 0
@@ -15,6 +17,7 @@ class BaronAshbury:
         self.battle()
 
     def battle(self):
+        "Repeats player turn and enemy's turn until someone's health is depleted."
         while self.is_running is True:
             print("Baron Ashbury has " + str(self.boss_health) + " HP remaining.")
             self.turn_counter += 1
@@ -29,6 +32,7 @@ class BaronAshbury:
                 self.is_running = False
 
     def boss_turn(self):
+        "The boss takes an action."
         self.boss_cooldown -= 1
         if self.boss_cooldown == 0:
             self.asphyxiate()
@@ -38,6 +42,7 @@ class BaronAshbury:
             self.boss_melee()
 
     def asphyxiate(self):
+        "Reduces the player to 1 and interrupts channels."
         print("Baron Ashbury says: This is just too easy.")
         print("Baron Ashbury asphyxiates his foes!")
         self.player_health = 1
@@ -46,6 +51,7 @@ class BaronAshbury:
         self.soe = True
 
     def stay_of_execution(self):
+        "Heals the player for half of their maximum HP."
         print("Baron Ashbury says: I'll keep you alive to witness your screams.")
         print("Baron Ashbury delays your execution!")
         self.player_health += self.soe_amount
@@ -54,9 +60,7 @@ class BaronAshbury:
         self.soe = False
 
     def boss_melee(self):
+        "Damages the player."
         damage = 8 - self.player_armor + randint(1, 4)
         self.player_health -= damage
         print("Baron Ashbury Melee hit you " + str(damage) + " Physical.")
-
-
-BaronAshbury()

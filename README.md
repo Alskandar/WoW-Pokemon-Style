@@ -9,7 +9,6 @@ These are labelled with a name and do not end with the word "Base."
 Currently, two such character files exist: Torvinn the Paladin and Aarghh the Warlock.
 Within each character file are several encounters: classes labelled with the name of a boss.
 Both character files have access to both existing bosses: the Training Dummy and the sadistic Baron Ashbury.
-
 Files ending with the word "Base" contain the base code for a hero or boss.
 These cannot be used to play the game.
 
@@ -32,16 +31,16 @@ Flash of Light: Channels holy light, healing yourself for massive damage at the 
 Aarghh the Warlock:
 A dark spellcaster who corrupts his enemies' souls and steals their very life.
 Corruption: Corrupts the enemy, dealing light damage every round for 5 rounds. 
-Agony: Inflicts agony on the enemy, dealing light damage every round for 6 rounds. Damage increases each time it deals damage, up to 6 additional damage.
+Agony: Inflicts agony on the enemy, dealing light damage every round for 6 rounds. Damage increases each time it deals damage, up to 4 additional damage.
       Bonus is lost if the effect expires.  Damage has a chance to generate a soul shard.  
-CURRENTLY NONFUNCTIONAL Unstable Affliction: Curses the enemy, dealing medium damage every round for 2 rounds.  Up to 5 instances can be active at once.  Costs 1 soul shard.
-Drain Soul: Drains the target's life essense, dealing low damage to the enemy and low healing to you now and at the start of your next turn.  Costs 4 mana.  You regenerate 1 mana per round.
+Unstable Affliction: Curses the enemy, dealing medium damage every round for 2 rounds.  Up to 5 instances can be active at once.  Costs 1 soul shard.
+Drain Soul: Drains the target's life essense, dealing low damage to the enemy and high healing to you now and at the start of your next turn.  Costs 4 mana.  You regenerate 1 mana per round.
 Life Tap: Sacrifices 2 of your hit points to restore 8 mana.
-Healthstone: Consumes a Healthstone, healing you for a large amount.  Usable once per encounter.
+Healthstone: Consumes a Healthstone, healing you for a massive amount.  Usable once per encounter.
 
-Training Dummy:
+Training Dummy: TargetDummy()
 Practice your skills on this dummy!  You will need to manually quit this encounter.
 
-Baron Ashbury:
+Baron Ashbury: BaronAshbury()
 This sadistic undead noble enjoys toying with his victims.
 Ashbury will sometimes asphyxiate you, interrupting your channels and reducing your health to 1.  On the following round, he will cast Stay of Execution, healing you for half of your maximum health.

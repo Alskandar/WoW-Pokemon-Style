@@ -13,6 +13,7 @@
 
 
     def player_turn(self):
+        "Allows the player to take one of their actions."
         has_acted = False
         self.start_of_player_turn()
         while has_acted is False:
@@ -58,12 +59,14 @@
 
 
     def crusader_strike(self):
+        "Damages the enemy."
         damage = 5 - self.boss_armor + randint(1, 4)
         self.boss_health -= damage
         print("Your Crusader Strike hit Boss " + str(damage) + " Physical.")
 
 
     def avengers_shield(self):
+        "Damages the enemy."
         damage = 7 + randint(1, 4)
         self.boss_health -= damage
         print("Your Avenger's Shield hit Boss " + str(damage) + " Holy.")
@@ -71,6 +74,7 @@
 
 
     def shield_of_the_righteous(self):
+        "Damages the enemy and prompts your armor gain."
         damage = 5 + randint(1, 4)
         self.boss_health -= damage
         print("Your Shield of the Righteous hit Boss " + str(damage) + " Holy.")
@@ -79,6 +83,7 @@
 
 
     def consecration_attack(self):
+        "Damages the enemy."
         damage = randint(1, 4)
         self.boss_health -= damage
         print("Your Consecration hit Boss " + str(damage) + " Holy.")
@@ -86,11 +91,13 @@
 
 
     def flash_of_light(self):
+        "Begins channelling Flash of Light."
         self.channel = True
         self.player_mana -= 5
 
 
     def start_of_player_turn(self):
+        "Runs many actions that occur at the start of your turn."
         if self.shield is True:
                     self.player_armor = 3
                     self.shield = False
@@ -119,6 +126,7 @@
         if self.shield_cooldown == 0 and self.shields_availible < 3:
             self.shields_availible += 1
             self.shield_cooldown = 10
+        # Print boss health here.
         print("You have " + str(self.player_health) + " HP remaining.")
         print("You have " + str(self.player_mana) + " mana remaining.")
         print("You have " + str(self.shields_availible) + " charges of Shield of the Righteous availible.")
