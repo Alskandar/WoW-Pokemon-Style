@@ -17,7 +17,7 @@ self.player_mana = 20
 def player_turn(self):
     has_acted = False
     self.start_of_player_turn()
-    while has_acted == False
+    while has_acted is False:
         action = input("Select an ability to perform: ")
         if action.lower() == "crusader strike":
             self.crusader_strike()
@@ -57,17 +57,20 @@ def player_turn(self):
         if self.consecration > 0:
             self.player_armor += 1
         self.shield = True
-            
+
+
 def crusader_strike(self):
     damage = 5 - self.boss_armor + randint(1, 4)
     self.boss_health -= damage
     print("Your Crusader Strike hit Boss " + str(damage) + " Physical.")
+
 
 def avengers_shield():
     damage = 7 + randint(1, 4)
     self.boss_health -= damage
     print("Your Avenger's Shield hit Boss " + str(damage) + " Holy.")
     self.avengers_cooldown = 5
+
 
 def shield_of_the_righteous(self):
     damage = 5 + randint(1, 4)
@@ -76,21 +79,24 @@ def shield_of_the_righteous(self):
     self.shield_active += 2
     self.shields_availible -= 1
 
+
 def consecration_attack(self):
-    damage = randint(1,4)
+    damage = randint(1, 4)
     self.boss_health -= damage
     print("Your Consecration hit Boss " + str(damage) + " Holy.")
     self.consecration -= 1
+
 
 def flash_of_light(self):
     self.heal = True
     self.player_mana -= 5
 
+
 def start_of_player_turn(self):
-    if self.shield == True:
+    if self.shield is True:
                 self.player_armor = 3
                 self.shield = False
-    if self.heal == True:
+    if self.heal is True:
         heal_amount = randint(14, 18)
         self.player_health += heal_amount
         print("Your Flash of Light healed you " + str(heal_amount) + " Holy.")
@@ -117,6 +123,3 @@ def start_of_player_turn(self):
         self.shield_cooldown = 10
     print("You have " + str(self.player_mana) + " mana remaining.")
     print("You have " + str(self.shields_availible) + " charges of Shield of the Righteous availible.")
-              
-
-
