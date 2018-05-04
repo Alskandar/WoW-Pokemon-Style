@@ -26,6 +26,7 @@ Playing the Game:
 Run one of the character files.  Enter the name of the class indicating the boss you wish to face, followed by ()
 
 You and the boss will alternate turns.  On your turn, you will be prompted to enter a command.  Commands are listed below.  Capitalization does not matter.  
+
 Entering an incorrect command, or the command for an ability you cannot use, will prompt you to enter another command.
 
 Deplete the boss's health before they deplete yours!
@@ -49,17 +50,26 @@ Flash of Light: Channels holy light, healing yourself for massive damage at the 
 
 
 Aarghh the Warlock:
+
 A dark spellcaster who corrupts his enemies' souls and steals their very life.
+
 Corruption: Corrupts the enemy, dealing light damage every round for 5 rounds. 
+
 Agony: Inflicts agony on the enemy, dealing light damage every round for 6 rounds. Damage increases each time it deals damage, up to 4 additional damage.  Bonus is lost if the effect expires.  Damage has a chance to generate a soul shard.  
+
 Unstable Affliction: Curses the enemy, dealing medium damage every round for 2 rounds.  Up to 5 instances can be active at once.  Costs 1 soul shard.
+
 Drain Soul: Drains the target's life essense, dealing low damage to the enemy and high healing to you now and at the start of your next turn.  Costs 4 mana.  You regenerate 1 mana per round.
+
 Life Tap: Sacrifices 2 of your hit points to restore 8 mana.
+
 Healthstone: Consumes a Healthstone, healing you for a massive amount.  Usable once per encounter.
+
 
 Training Dummy: TargetDummy()
 
 Practice your skills on this dummy!  You will need to manually quit this encounter.
+
 
 Baron Ashbury: BaronAshbury()
 
